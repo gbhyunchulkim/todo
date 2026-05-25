@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>할 일 목록</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="app__header">
+      <h1>할 일 목록</h1>
+      <p class="app__date" id="today"></p>
+    </header>
+
+    <form class="add" id="add-form">
+      <input
+        type="text"
+        id="add-input"
+        class="add__input"
+        placeholder="할 일을 입력하고 Enter를 누르세요"
+        autocomplete="off"
+        maxlength="200"
+      />
+      <button type="submit" class="add__btn">추가</button>
+    </form>
+
+    <section class="filters" id="filters">
+      <button class="filters__btn is-active" data-filter="all">전체</button>
+      <button class="filters__btn" data-filter="active">진행 중</button>
+      <button class="filters__btn" data-filter="done">완료</button>
+    </section>
+
+    <ul class="list" id="list"></ul>
+
+    <p class="empty" id="empty" hidden>할 일이 없습니다. 🎉</p>
+
+    <footer class="app__footer">
+      <span id="count">0개 남음</span>
+      <button class="clear" id="clear-done">완료 항목 비우기</button>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,210 @@
+:root {
+  --bg: #f4f5f7;
+  --card: #ffffff;
+  --text: #1f2329;
+  --muted: #8a909a;
+  --border: #e6e8ec;
+  --primary: #4f6ef7;
+  --primary-dark: #3f5be0;
+  --danger: #ef5350;
+  --done: #b4b9c2;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+    "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 48px 16px;
+}
+
+.app {
+  width: 100%;
+  max-width: 520px;
+  background: var(--card);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.app__header {
+  padding: 28px 28px 16px;
+}
+
+.app__header h1 {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.app__date {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* 입력 */
+.add {
+  display: flex;
+  gap: 8px;
+  padding: 0 28px 16px;
+}
+
+.add__input {
+  flex: 1;
+  padding: 12px 14px;
+  font-size: 15px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.add__input:focus {
+  border-color: var(--primary);
+}
+
+.add__btn {
+  padding: 0 18px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--primary);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.add__btn:hover {
+  background: var(--primary-dark);
+}
+
+/* 필터 */
+.filters {
+  display: flex;
+  gap: 6px;
+  padding: 0 28px 12px;
+}
+
+.filters__btn {
+  padding: 6px 14px;
+  font-size: 13px;
+  color: var(--muted);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.filters__btn.is-active {
+  color: #fff;
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+/* 목록 */
+.list {
+  list-style: none;
+  border-top: 1px solid var(--border);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 28px;
+  border-bottom: 1px solid var(--border);
+}
+
+.item__check {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  cursor: pointer;
+  accent-color: var(--primary);
+}
+
+.item__text {
+  flex: 1;
+  font-size: 15px;
+  word-break: break-word;
+  cursor: pointer;
+}
+
+.item.is-done .item__text {
+  color: var(--done);
+  text-decoration: line-through;
+}
+
+.item__edit {
+  flex: 1;
+  font-size: 15px;
+  padding: 6px 8px;
+  border: 1px solid var(--primary);
+  border-radius: 6px;
+  outline: none;
+}
+
+.item__del {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  font-size: 18px;
+  line-height: 1;
+  color: var(--muted);
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 0.15s;
+}
+
+.item:hover .item__del {
+  opacity: 1;
+}
+
+.item__del:hover {
+  color: var(--danger);
+  background: #fdecec;
+}
+
+/* 빈 상태 */
+.empty {
+  padding: 40px 28px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+/* 푸터 */
+.app__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 28px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.clear {
+  font-size: 13px;
+  color: var(--muted);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.clear:hover {
+  color: var(--danger);
+}
